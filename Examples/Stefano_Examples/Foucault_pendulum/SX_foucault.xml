@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" version="0.2" math="SpaceEx">
+  <component id="Clock">
+    <param name="t" type="real" local="false" d1="1" d2="1" dynamics="any" placement="east" />
+    <location id="1" name="loc01">
+      <flow>t' == 1</flow>
+    </location>
+  </component>
+  <component id="sldemo_foucaultSum">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="In2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <location id="1" name="loc01">
+      <invariant>Out1==-In1+In2</invariant>
+    </location>
+  </component>
+  <component id="sldemo_foucaultIntegrator1">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" placement="east" />
+    <location id="1" name="loc01">
+      <flow>Out1' == In1</flow>
+    </location>
+  </component>
+  <component id="sldemo_foucaultIntegrator2">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" placement="east" />
+    <location id="1" name="loc01">
+      <flow>Out1' == In1</flow>
+    </location>
+  </component>
+  <component id="sldemo_foucaultGain">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Gain" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <location id="1" name="loc01">
+      <invariant>Out1==Gain*In1</invariant>
+    </location>
+  </component>
+  <component id="sldemo_foucaultIntegrator3">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" placement="east" />
+    <location id="1" name="loc01">
+      <flow>Out1' == In1</flow>
+    </location>
+  </component>
+  <component id="sldemo_foucaultSum1">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="In2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <location id="1" name="loc01">
+      <invariant>Out1==-In1-In2</invariant>
+    </location>
+  </component>
+  <component id="sldemo_foucaultGain3">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Gain" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <location id="1" name="loc01">
+      <invariant>Out1==Gain*In1</invariant>
+    </location>
+  </component>
+  <component id="sldemo_foucaultIntegrator">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" placement="east" />
+    <location id="1" name="loc01">
+      <flow>Out1' == In1</flow>
+    </location>
+  </component>
+  <component id="sldemo_foucaultGain2">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Gain" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <location id="1" name="loc01">
+      <invariant>Out1==Gain*In1</invariant>
+    </location>
+  </component>
+  <component id="sldemo_foucaultScope">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="In2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <location id="1" name="loc01" />
+  </component>
+  <component id="sldemo_foucaultGain1">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Gain" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <location id="1" name="loc01">
+      <invariant>Out1==Gain*In1</invariant>
+    </location>
+  </component>
+  <component id="sldemo_foucault">
+    <param name="Gain2Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="440.0" y="290.0" placement="east" />
+    <param name="Gain1Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="260.0" y="180.0" placement="east" />
+    <param name="Integrator2Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" x="455.0" y="240.0" placement="east" />
+    <param name="Gain3Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="260.0" y="330.0" placement="east" />
+    <param name="Sum1Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="240.0" y="290.0" placement="east" />
+    <param name="GainOut1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="440.0" y="75.0" placement="east" />
+    <param name="IntegratorOut1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" x="460.0" y="125.0" placement="east" />
+    <param name="Integrator3Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" x="585.0" y="240.0" placement="east" />
+    <param name="Integrator1Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" x="585.0" y="125.0" placement="east" />
+    <param name="SumOut1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="265.0" y="125.0" placement="east" />
+    <param name="t" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <bind component="sldemo_foucaultSum" as="Sum" x="255.0" y="125.0" width="20.0" height="20.0">
+      <note>This SX Component is used to model &lt;&lt;Sum&gt;&gt; SL Block Type</note>
+      <map key="In1">
+        GainOut1
+        <link>230.0,125.0,230.0,75.0</link>
+      </map>
+      <map key="In2">Gain1Out1</map>
+      <map key="Out1">SumOut1</map>
+    </bind>
+    <bind component="sldemo_foucaultIntegrator1" as="Integrator1" x="570.0" y="125.0" width="30.0" height="30.0">
+      <note>This SX Component is used to model &lt;&lt;Integrator&gt;&gt; SL Block Type</note>
+      <map key="In1">
+        IntegratorOut1
+        <link>520.0,125.0</link>
+      </map>
+      <map key="Out1">Integrator1Out1</map>
+    </bind>
+    <bind component="sldemo_foucaultIntegrator2" as="Integrator2" x="440.0" y="240.0" width="30.0" height="30.0">
+      <note>This SX Component is used to model &lt;&lt;Integrator&gt;&gt; SL Block Type</note>
+      <map key="In1">
+        Sum1Out1
+        <link>230.0,240.0,230.0,290.0</link>
+      </map>
+      <map key="Out1">Integrator2Out1</map>
+    </bind>
+    <bind component="sldemo_foucaultGain" as="Gain" x="466.0" y="72.0" width="50.0" height="36.0">
+      <note>This SX Component is used to model &lt;&lt;Gain&gt;&gt; SL Block Type</note>
+      <map key="In1">
+        Integrator1Out1
+        <link>640.0,75.0,640.0,125.0</link>
+      </map>
+      <map key="Out1">GainOut1</map>
+      <map key="Gain">0.1467</map>
+    </bind>
+    <bind component="sldemo_foucaultIntegrator3" as="Integrator3" x="570.0" y="240.0" width="30.0" height="30.0">
+      <note>This SX Component is used to model &lt;&lt;Integrator&gt;&gt; SL Block Type</note>
+      <map key="In1">
+        Integrator2Out1
+        <link>485.0,240.0</link>
+      </map>
+      <map key="Out1">Integrator3Out1</map>
+    </bind>
+    <bind component="sldemo_foucaultSum1" as="Sum1" x="250.0" y="290.0" width="20.0" height="20.0">
+      <note>This SX Component is used to model &lt;&lt;Sum&gt;&gt; SL Block Type</note>
+      <map key="In1">Gain2Out1</map>
+      <map key="In2">
+        Gain3Out1
+        <link>255.0,330.0</link>
+      </map>
+      <map key="Out1">Sum1Out1</map>
+    </bind>
+    <bind component="sldemo_foucaultGain3" as="Gain3" x="335.0" y="330.0" width="150.0" height="54.0">
+      <note>This SX Component is used to model &lt;&lt;Gain&gt;&gt; SL Block Type</note>
+      <map key="In1">
+        IntegratorOut1
+        <link>520.0,330.0,520.0,125.0</link>
+      </map>
+      <map key="Out1">Gain3Out1</map>
+      <map key="Gain">1.0977e-04</map>
+    </bind>
+    <bind component="sldemo_foucaultIntegrator" as="Integrator" x="445.0" y="125.0" width="30.0" height="30.0">
+      <note>This SX Component is used to model &lt;&lt;Integrator&gt;&gt; SL Block Type</note>
+      <map key="In1">SumOut1</map>
+      <map key="Out1">IntegratorOut1</map>
+    </bind>
+    <bind component="sldemo_foucaultGain2" as="Gain2" x="465.0" y="290.0" width="50.0" height="36.0">
+      <note>This SX Component is used to model &lt;&lt;Gain&gt;&gt; SL Block Type</note>
+      <map key="In1">
+        Integrator3Out1
+        <link>640.0,290.0,640.0,240.0</link>
+      </map>
+      <map key="Out1">Gain2Out1</map>
+      <map key="Gain">0.1467</map>
+    </bind>
+    <bind component="sldemo_foucaultScope" as="Scope" x="595.0" y="177.0" width="30.0" height="33.0">
+      <note>Warning: not supported Simulink Block Type.
+
+The current SL2SX version can not handle: Scope SL Block Type</note>
+      <map key="In1">
+        Integrator1Out1
+        <link>640.0,170.0,640.0,125.0</link>
+      </map>
+      <map key="In2">
+        Integrator3Out1
+        <link>640.0,185.0,640.0,240.0</link>
+      </map>
+    </bind>
+    <bind component="sldemo_foucaultGain1" as="Gain1" x="335.0" y="180.0" width="150.0" height="54.0">
+      <note>This SX Component is used to model &lt;&lt;Gain&gt;&gt; SL Block Type</note>
+      <map key="In1">
+        Integrator2Out1
+        <link>485.0,180.0,485.0,240.0</link>
+      </map>
+      <map key="Out1">Gain1Out1</map>
+      <map key="Gain">1.0977e-04</map>
+    </bind>
+    <bind component="Clock" as="Clock" x="150.0" y="10.0" width="10.0" height="10.0">
+      <map key="t">t</map>
+    </bind>
+  </component>
+</sspaceex>
+

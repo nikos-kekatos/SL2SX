@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" version="0.2" math="SpaceEx">
+  <component id="Clock">
+    <param name="t" type="real" local="false" d1="1" d2="1" dynamics="any" placement="east" />
+    <location id="1" name="loc01" x="210.0" y="110.0">
+      <invariant>t&lt;=10</invariant>
+      <flow>t' == 1</flow>
+    </location>
+  </component>
+  <component id="Rear_SuspensionSum3">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="In2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <location id="1" name="loc01">
+      <invariant>Out1==In1+In2</invariant>
+    </location>
+  </component>
+  <component id="Rear_Suspensionstiffness">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="Gain" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <location id="1" name="loc01">
+      <invariant>Out1==Gain*In1</invariant>
+    </location>
+  </component>
+  <component id="Rear_SuspensionSum2">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="In2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <location id="1" name="loc01">
+      <invariant>Out1==In1+In2</invariant>
+    </location>
+  </component>
+  <component id="Rear_Suspensiondamping">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="Gain" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <location id="1" name="loc01">
+      <invariant>Out1==Gain*In1</invariant>
+    </location>
+  </component>
+  <component id="Rear_SuspensionFz">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="In2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <location id="1" name="loc01">
+      <invariant>Out1==-In1-In2</invariant>
+    </location>
+  </component>
+  <component id="Rear_SuspensionMomentArm1">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="Gain" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <location id="1" name="loc01">
+      <invariant>Out1==Gain*In1</invariant>
+    </location>
+  </component>
+  <component id="Rear_SuspensionMomentArm2">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="Gain" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <location id="1" name="loc01">
+      <invariant>Out1==Gain*In1</invariant>
+    </location>
+  </component>
+  <component id="Rear_SuspensionMomentArm3">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="Gain" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <location id="1" name="loc01">
+      <invariant>Out1==Gain*In1</invariant>
+    </location>
+  </component>
+  <component id="Front_SuspensionSum3">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="In2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <location id="1" name="loc01">
+      <invariant>Out1==In1+In2</invariant>
+    </location>
+  </component>
+  <component id="Front_Suspensionstiffness">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="Gain" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <location id="1" name="loc01">
+      <invariant>Out1==Gain*In1</invariant>
+    </location>
+  </component>
+  <component id="Front_SuspensionSum2">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="In2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <location id="1" name="loc01">
+      <invariant>Out1==In1+In2</invariant>
+    </location>
+  </component>
+  <component id="Front_Suspensiondamping">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="Gain" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <location id="1" name="loc01">
+      <invariant>Out1==Gain*In1</invariant>
+    </location>
+  </component>
+  <component id="Front_SuspensionFz">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="In2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <location id="1" name="loc01">
+      <invariant>Out1==-In1-In2</invariant>
+    </location>
+  </component>
+  <component id="Front_SuspensionMomentArm1">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="Gain" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <location id="1" name="loc01">
+      <invariant>Out1==Gain*In1</invariant>
+    </location>
+  </component>
+  <component id="Front_SuspensionMomentArm2">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="Gain" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <location id="1" name="loc01">
+      <invariant>Out1==Gain*In1</invariant>
+    </location>
+  </component>
+  <component id="Front_SuspensionMomentArm3">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="Gain" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <location id="1" name="loc01">
+      <invariant>Out1==Gain*In1</invariant>
+    </location>
+  </component>
+  <component id="sldemo_suspngravity_acceleration">
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="K" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <location id="1" name="loc01">
+      <invariant>Out1==K</invariant>
+    </location>
+  </component>
+  <component id="sldemo_suspnTHETA">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" placement="east" />
+    <location id="1" name="loc01" x="210.0" y="110.0">
+      <flow>Out1' == In1</flow>
+    </location>
+  </component>
+  <component id="sldemo_suspnRoad_Height">
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" placement="east" />
+    <param name="t" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <location id="1" name="loc1" x="209.0" y="110.0" width="142.0" height="68.0">
+      <invariant>t&lt;=7 &amp;&amp; Out1==0</invariant>
+      <flow>t'==1</flow>
+    </location>
+    <location id="2" name="loc2" x="422.0" y="110.0">
+      <invariant>t&gt;=7 &amp;&amp; Out1==0.01</invariant>
+      <flow>t'==1</flow>
+    </location>
+    <transition source="1" target="2">
+      <guard>t&gt;=7</guard>
+      <assignment>Out1'==0.01</assignment>
+      <labelposition x="-33.0" y="50.0" width="90.0" height="80.0" />
+    </transition>
+  </component>
+  <component id="sldemo_suspnPitch_moment_by_accel">
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="t" type="real" local="true" d1="1" d2="1" dynamics="any" />
+    <location id="1" name="loc1" x="164.0" y="235.0" width="136.0" height="68.0">
+      <invariant>Out1==0 &amp;&amp; t&lt;=3</invariant>
+      <flow>t'==1</flow>
+    </location>
+    <location id="2" name="loc2" x="377.0" y="239.0" width="132.0" height="76.0">
+      <invariant>t&gt;=3 &amp;&amp; Out1==100</invariant>
+      <flow>t'==1</flow>
+    </location>
+    <transition source="1" target="2">
+      <guard>t&gt;=3</guard>
+      <assignment>Out1'==100</assignment>
+      <labelposition x="-44.0" y="30.0" width="92.0" height="90.0" />
+    </transition>
+  </component>
+  <component id="sldemo_suspnSum">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="In2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <location id="1" name="loc01">
+      <invariant>Out1==In1+In2</invariant>
+    </location>
+  </component>
+  <component id="sldemo_suspnZdot">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" placement="east" />
+    <location id="1" name="loc01" x="210.0" y="110.0">
+      <flow>Out1' == In1</flow>
+    </location>
+  </component>
+  <component id="sldemo_suspn1_Over_BodyInertia">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="Gain" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <location id="1" name="loc01" x="210.0" y="110.0">
+      <invariant>Out1==Gain*In1</invariant>
+    </location>
+  </component>
+  <component id="sldemo_suspnSum5">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="In2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <location id="1" name="loc01" x="210.0" y="110.0">
+      <invariant>Out1==In1+In2</invariant>
+    </location>
+  </component>
+  <component id="sldemo_suspn1_Over_BodyMass">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <param name="Gain" type="real" local="false" d1="1" d2="1" dynamics="const" />
+    <location id="1" name="loc01">
+      <invariant>Out1==Gain*In1</invariant>
+    </location>
+  </component>
+  <component id="sldemo_suspnSum6">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="In2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="In3" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <location id="1" name="loc01">
+      <invariant>Out1==In1+In2+In3</invariant>
+    </location>
+  </component>
+  <component id="sldemo_suspnTHETAdot">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" placement="east" />
+    <location id="1" name="loc01" x="210.0" y="110.0">
+      <flow>Out1' == In1</flow>
+    </location>
+  </component>
+  <component id="sldemo_suspnSum4">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="In2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="east" />
+    <location id="1" name="loc01">
+      <invariant>Out1==In1+In2</invariant>
+    </location>
+  </component>
+  <component id="sldemo_suspnZ">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" placement="west" />
+    <param name="Out1" type="real" local="false" d1="1" d2="1" dynamics="any" placement="east" />
+    <location id="1" name="loc01" x="210.0" y="110.0">
+      <flow>Out1' == In1</flow>
+    </location>
+  </component>
+  <component id="Rear_Suspension">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="260.0" y="61.0" placement="east" />
+    <param name="In2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="260.0" y="109.0" placement="east" />
+    <param name="In3" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="260.0" y="157.0" placement="east" />
+    <param name="In4" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="260.0" y="205.0" placement="east" />
+    <param name="pitch_Torque" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="755.0" y="25.0" placement="west" />
+    <param name="Vertical_Force" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="755.0" y="85.0" placement="west" />
+    <param name="dampingOut1" type="real" local="true" d1="1" d2="1" dynamics="any" controlled="false" x="560.0" y="130.0" placement="east" />
+    <param name="MomentArm2Out1" type="real" local="true" d1="1" d2="1" dynamics="any" controlled="false" x="365.0" y="105.0" placement="east" />
+    <param name="Sum2Out1" type="real" local="true" d1="1" d2="1" dynamics="any" controlled="false" x="454.0" y="127.0" placement="east" />
+    <param name="MomentArm1Out1" type="real" local="true" d1="1" d2="1" dynamics="any" controlled="false" x="365.0" y="45.0" placement="east" />
+    <param name="stiffnessOut1" type="real" local="true" d1="1" d2="1" dynamics="any" controlled="false" x="560.0" y="55.0" placement="east" />
+    <param name="Sum3Out1" type="real" local="true" d1="1" d2="1" dynamics="any" controlled="false" x="454.0" y="55.0" placement="east" />
+    <bind component="Rear_SuspensionSum3" as="Sum3" x="447.0" y="55.0" width="15.0" height="40.0">
+      <note>This SX Component is used to model &lt;&lt;Sum&gt;&gt; SL Block Type</note>
+      <map key="In1">MomentArm1Out1</map>
+      <map key="In2">
+        In3
+        <link>385.0,57.0,385.0,157.0</link>
+      </map>
+      <map key="Out1">Sum3Out1</map>
+    </bind>
+    <bind component="Rear_Suspensionstiffness" as="stiffness" x="530.0" y="55.0" width="60.0" height="44.0">
+      <note>This SX Component is used to model &lt;&lt;Gain&gt;&gt; SL Block Type</note>
+      <map key="In1">Sum3Out1</map>
+      <map key="Out1">stiffnessOut1</map>
+      <map key="Gain">42000</map>
+    </bind>
+    <bind component="Rear_SuspensionSum2" as="Sum2" x="447.0" y="127.0" width="15.0" height="87.0">
+      <note>This SX Component is used to model &lt;&lt;Sum&gt;&gt; SL Block Type</note>
+      <map key="In1">MomentArm2Out1</map>
+      <map key="In2">
+        In4
+        <link>405.0,130.0,405.0,205.0</link>
+      </map>
+      <map key="Out1">Sum2Out1</map>
+    </bind>
+    <bind component="Rear_Suspensiondamping" as="damping" x="530.0" y="130.0" width="60.0" height="48.0">
+      <note>This SX Component is used to model &lt;&lt;Gain&gt;&gt; SL Block Type</note>
+      <map key="In1">Sum2Out1</map>
+      <map key="Out1">dampingOut1</map>
+      <map key="Gain">4000</map>
+    </bind>
+    <bind component="Rear_SuspensionFz" as="Fz" x="607.0" y="92.0" width="15.0" height="153.0">
+      <note>This SX Component is used to model &lt;&lt;Sum&gt;&gt; SL Block Type</note>
+      <map key="In1">stiffnessOut1</map>
+      <map key="In2">dampingOut1</map>
+      <map key="Out1">
+        Vertical_Force
+        <link>634.0,92.0,654.0,92.0</link>
+      </map>
+    </bind>
+    <bind component="Rear_SuspensionMomentArm1" as="MomentArm1" x="335.0" y="45.0" width="60.0" height="40.0">
+      <note>This SX Component is used to model &lt;&lt;Gain&gt;&gt; SL Block Type</note>
+      <map key="In1">In1</map>
+      <map key="Out1">MomentArm1Out1</map>
+      <map key="Gain">1.2</map>
+    </bind>
+    <bind component="Rear_SuspensionMomentArm2" as="MomentArm2" x="336.0" y="105.0" width="60.0" height="40.0">
+      <note>This SX Component is used to model &lt;&lt;Gain&gt;&gt; SL Block Type</note>
+      <map key="In1">In2</map>
+      <map key="Out1">MomentArm2Out1</map>
+      <map key="Gain">1.2</map>
+    </bind>
+    <bind component="Rear_SuspensionMomentArm3" as="MomentArm3" x="680.0" y="36.0" width="45.0" height="34.0">
+      <note>This SX Component is used to model &lt;&lt;Gain&gt;&gt; SL Block Type</note>
+      <map key="In1">
+        Vertical_Force
+        <link>634.0,32.0,634.0,92.0,634.0,92.0,654.0,92.0</link>
+      </map>
+      <map key="Out1">pitch_Torque</map>
+      <map key="Gain">1.2</map>
+    </bind>
+  </component>
+  <component id="Front_Suspension">
+    <param name="In1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="227.0" y="61.0" placement="west" />
+    <param name="In2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="228.0" y="109.0" placement="west" />
+    <param name="In3" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="229.0" y="157.0" placement="west" />
+    <param name="In4" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="227.0" y="202.0" placement="west" />
+    <param name="pitch_Torque" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="755.0" y="25.0" placement="east" />
+    <param name="Vertical_Force" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="755.0" y="85.0" placement="east" />
+    <param name="dampingOut1" type="real" local="true" d1="1" d2="1" dynamics="any" controlled="false" x="560.0" y="130.0" placement="east" />
+    <param name="MomentArm2Out1" type="real" local="true" d1="1" d2="1" dynamics="any" controlled="false" x="365.0" y="105.0" placement="east" />
+    <param name="Sum2Out1" type="real" local="true" d1="1" d2="1" dynamics="any" controlled="false" x="454.0" y="127.0" placement="east" />
+    <param name="MomentArm1Out1" type="real" local="true" d1="1" d2="1" dynamics="any" controlled="false" x="365.0" y="45.0" placement="east" />
+    <param name="stiffnessOut1" type="real" local="true" d1="1" d2="1" dynamics="any" controlled="false" x="560.0" y="55.0" placement="east" />
+    <param name="Sum3Out1" type="real" local="true" d1="1" d2="1" dynamics="any" controlled="false" x="454.0" y="55.0" placement="east" />
+    <bind component="Front_SuspensionSum3" as="Sum3" x="447.0" y="55.0" width="15.0" height="40.0">
+      <note>This SX Component is used to model &lt;&lt;Sum&gt;&gt; SL Block Type</note>
+      <map key="In1">MomentArm1Out1</map>
+      <map key="In2">
+        In3
+        <link>385.0,157.0</link>
+      </map>
+      <map key="Out1">Sum3Out1</map>
+    </bind>
+    <bind component="Front_Suspensionstiffness" as="stiffness" x="530.0" y="55.0" width="60.0" height="44.0">
+      <note>This SX Component is used to model &lt;&lt;Gain&gt;&gt; SL Block Type</note>
+      <map key="In1">Sum3Out1</map>
+      <map key="Out1">stiffnessOut1</map>
+      <map key="Gain">56000</map>
+    </bind>
+    <bind component="Front_SuspensionSum2" as="Sum2" x="447.0" y="127.0" width="15.0" height="87.0">
+      <note>This SX Component is used to model &lt;&lt;Sum&gt;&gt; SL Block Type</note>
+      <map key="In1">MomentArm2Out1</map>
+      <map key="In2">
+        In4
+        <link>405.0,205.0</link>
+      </map>
+      <map key="Out1">Sum2Out1</map>
+    </bind>
+    <bind component="Front_Suspensiondamping" as="damping" x="530.0" y="130.0" width="60.0" height="48.0">
+      <note>This SX Component is used to model &lt;&lt;Gain&gt;&gt; SL Block Type</note>
+      <map key="In1">Sum2Out1</map>
+      <map key="Out1">dampingOut1</map>
+      <map key="Gain">5000</map>
+    </bind>
+    <bind component="Front_SuspensionFz" as="Fz" x="607.0" y="92.0" width="15.0" height="153.0">
+      <note>This SX Component is used to model &lt;&lt;Sum&gt;&gt; SL Block Type</note>
+      <map key="In1">stiffnessOut1</map>
+      <map key="In2">dampingOut1</map>
+      <map key="Out1">
+        Vertical_Force
+        <link>634.0,92.0,654.0,92.0</link>
+      </map>
+    </bind>
+    <bind component="Front_SuspensionMomentArm1" as="MomentArm1" x="335.0" y="45.0" width="60.0" height="40.0">
+      <note>This SX Component is used to model &lt;&lt;Gain&gt;&gt; SL Block Type</note>
+      <map key="In1">In1</map>
+      <map key="Out1">MomentArm1Out1</map>
+      <map key="Gain">-0.9</map>
+    </bind>
+    <bind component="Front_SuspensionMomentArm2" as="MomentArm2" x="335.0" y="105.0" width="60.0" height="40.0">
+      <note>This SX Component is used to model &lt;&lt;Gain&gt;&gt; SL Block Type</note>
+      <map key="In1">In2</map>
+      <map key="Out1">MomentArm2Out1</map>
+      <map key="Gain">-0.9</map>
+    </bind>
+    <bind component="Front_SuspensionMomentArm3" as="MomentArm3" x="682.0" y="35.0" width="45.0" height="34.0">
+      <note>This SX Component is used to model &lt;&lt;Gain&gt;&gt; SL Block Type</note>
+      <map key="In1">
+        Vertical_Force
+        <link>634.0,32.0,634.0,92.0,634.0,92.0,654.0,92.0</link>
+      </map>
+      <map key="Out1">pitch_Torque</map>
+      <map key="Gain">-0.9</map>
+    </bind>
+  </component>
+  <component id="sldemo_suspn">
+    <param name="Front_SuspensionOut1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="330.0" y="206.0" placement="east" />
+    <param name="Front_SuspensionOut2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="330.0" y="237.0" placement="east" />
+    <param name="THETAOut1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" x="760.0" y="90.0" placement="east" />
+    <param name="Sum5Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="535.0" y="325.0" placement="east" />
+    <param name="SumOut1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="770.0" y="325.0" placement="east" />
+    <param name="ZdotOut1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" x="590.0" y="325.0" placement="east" />
+    <param name="Pitch_moment_by_accelOut1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="266.0" y="94.0" placement="east" />
+    <param name="ZOut1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" x="695.0" y="325.0" placement="east" />
+    <param name="Sum6Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="452.0" y="91.0" placement="east" />
+    <param name="unnamed" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" x="550.0" y="90.0" placement="east" />
+    <param name="Rear_SuspensionOut2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="545.0" y="237.0" placement="east" />
+    <param name="Road_HeightOut1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" x="699.0" y="265.0" placement="east" />
+    <param name="gravity_accelerationOut1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="279.0" y="375.0" placement="east" />
+    <param name="Rear_SuspensionOut1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="545.0" y="206.0" placement="east" />
+    <param name="THETAdotOut1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" x="640.0" y="90.0" placement="east" />
+    <param name="Sum4Out1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="390.0" y="278.0" placement="east" />
+    <param name="t" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="BodyInertiaOut1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="533.0" y="22.0" />
+    <param name="BodyMassOut1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" x="478.0" y="307.0" />
+    <bind component="sldemo_suspngravity_acceleration" as="gravity_acceleration" x="239.0" y="376.0" width="35.0" height="24.0">
+      <note>This SX Component is used to model &lt;&lt;Constant&gt;&gt; SL Block Type</note>
+      <map key="Out1">gravity_accelerationOut1</map>
+      <map key="K">-9.81</map>
+    </bind>
+    <bind component="sldemo_suspnTHETA" as="THETA" x="750.0" y="90.0" width="20.0" height="36.0">
+      <note>This SX Component is used to model &lt;&lt;Integrator&gt;&gt; SL Block Type</note>
+      <map key="In1">
+        THETAdotOut1
+        <link>705.0,90.0</link>
+      </map>
+      <map key="Out1">THETAOut1</map>
+    </bind>
+    <bind component="sldemo_suspnRoad_Height" as="Road_Height" x="682.0" y="265.0" width="35.0" height="34.0">
+      <note>Warning: not supported Simulink Block Type.
+
+The current SL2SX version can not handle: Step SL Block Type</note>
+      <map key="Out1">Road_HeightOut1</map>
+    </bind>
+    <bind component="sldemo_suspnPitch_moment_by_accel" as="Pitch_moment_by_accel" x="221.0" y="90.0" width="50.0" height="44.0">
+      <note>Warning: not supported Simulink Block Type.
+
+The current SL2SX version can not handle: Step SL Block Type</note>
+      <map key="Out1">Pitch_moment_by_accelOut1</map>
+    </bind>
+    <bind component="Rear_Suspension" as="Rear_Suspension" x="595.0" y="222.0" width="100.0" height="95.0">
+      <note>This SX Component is used to model &lt;&lt;SubSystem&gt;&gt; SL Block Type</note>
+      <map key="pitch_Torque">Rear_SuspensionOut1</map>
+      <map key="Vertical_Force">Rear_SuspensionOut2</map>
+      <map key="In4">ZdotOut1</map>
+      <map key="In3">SumOut1</map>
+      <map key="In2">THETAdotOut1</map>
+      <map key="In1">THETAOut1</map>
+    </bind>
+    <bind component="sldemo_suspnSum" as="Sum" x="760.0" y="325.0" width="20.0" height="20.0">
+      <note>This SX Component is used to model &lt;&lt;Sum&gt;&gt; SL Block Type</note>
+      <map key="In1">
+        Road_HeightOut1
+        <link>754.0,265.0</link>
+      </map>
+      <map key="In2">ZOut1</map>
+      <map key="Out1">SumOut1</map>
+    </bind>
+    <bind component="sldemo_suspnZdot" as="Zdot" x="580.0" y="325.0" width="20.0" height="36.0">
+      <note>Warning: not supported Simulink Block Type.
+
+The current SL2SX version can not handle: Integrator SL Block Type</note>
+      <map key="In1">Sum5Out1</map>
+      <map key="Out1">ZdotOut1</map>
+    </bind>
+    <bind component="sldemo_suspnSum6" as="Sum6" x="416.0" y="90.0" width="52.0" height="60.0">
+      <note>This SX Component is used to model &lt;&lt;Sum&gt;&gt; SL Block Type</note>
+      <map key="In1">Pitch_moment_by_accelOut1</map>
+      <map key="In2">
+        Front_SuspensionOut1
+        <link>368.0,206.0</link>
+      </map>
+      <map key="In3">
+        Rear_SuspensionOut1
+        <link>382.0,152.0,496.0,217.0</link>
+      </map>
+      <map key="Out1">Sum6Out1</map>
+    </bind>
+    <bind component="Front_Suspension" as="Front_Suspension" x="280.0" y="222.0" width="100.0" height="95.0">
+      <note>This SX Component is used to model &lt;&lt;SubSystem&gt;&gt; SL Block Type</note>
+      <map key="pitch_Torque">Front_SuspensionOut1</map>
+      <map key="Vertical_Force">Front_SuspensionOut2</map>
+      <map key="In1">THETAOut1</map>
+      <map key="In2">THETAdotOut1</map>
+      <map key="In3">SumOut1</map>
+      <map key="In4">ZdotOut1</map>
+    </bind>
+    <bind component="sldemo_suspnSum4" as="Sum4" x="370.0" y="246.0" width="20.0" height="20.0">
+      <note>This SX Component is used to model &lt;&lt;Sum&gt;&gt; SL Block Type</note>
+      <map key="In1">Front_SuspensionOut2</map>
+      <map key="In2">Rear_SuspensionOut2</map>
+      <map key="Out1">Sum4Out1</map>
+    </bind>
+    <bind component="sldemo_suspnZ" as="Z" x="685.0" y="325.0" width="20.0" height="32.0">
+      <note>This SX Component is used to model &lt;&lt;Integrator&gt;&gt; SL Block Type</note>
+      <map key="In1">
+        ZdotOut1
+        <link>650.0,325.0</link>
+      </map>
+      <map key="Out1">ZOut1</map>
+    </bind>
+    <bind component="Clock" as="Clock" x="150.0" y="10.0" width="10.0" height="10.0">
+      <map key="t">t</map>
+    </bind>
+    <bind component="sldemo_suspn1_Over_BodyInertia" as="BodyInertia_1" x="490.0" y="21.0">
+      <map key="In1">Sum6Out1</map>
+      <map key="Out1">BodyInertiaOut1</map>
+      <map key="Gain">4.761904761904762e-4</map>
+    </bind>
+    <bind component="sldemo_suspnTHETAdot" as="THETAdot_1" x="579.0" y="53.0">
+      <map key="In1">BodyInertiaOut1</map>
+      <map key="Out1">THETAdotOut1</map>
+    </bind>
+    <bind component="sldemo_suspn1_Over_BodyMass" as="BodyMass" x="424.0" y="318.0">
+      <map key="In1">Sum4Out1</map>
+      <map key="Out1">BodyMassOut1</map>
+      <map key="Gain">8.333333333333333e-4</map>
+    </bind>
+    <bind component="sldemo_suspnSum5" as="Sum5" x="507.0" y="372.0" width="34.0" height="26.0">
+      <map key="In1">BodyMassOut1</map>
+      <map key="In2">gravity_accelerationOut1</map>
+      <map key="Out1">Sum5Out1</map>
+    </bind>
+  </component>
+</sspaceex>
+
